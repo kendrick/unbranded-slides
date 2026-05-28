@@ -48,9 +48,27 @@ Beat: *"Most teams' decks look nothing like their product. Same company, two dif
 
 ```yaml
 ---
-layout: statement
+layout: claim-support
 beat: 1
-read: "beat 1 reads as one focal claim about brand-deck dissonance; the second sentence is a punchline restatement, not separate evidence → statement"
-text: "Most teams' decks look nothing like their product. Same company, two different brands."
+read: "two-beat — an observation about brand-deck dissonance followed by a one-line punchline that names the consequence → claim-support, with the punchline as slot-body prose beneath the assertion"
+heading: "Most teams' decks look nothing like their product."
 ---
+
+Same company, two different brands.
 ```
+
+(First pass on this beat picked `statement`. Got corrected to `claim-support` in review because the giant centered claim treatment turned a two-sentence beat into a wall of bolded text. The slot-fallback pattern handles a single supporting sentence cleanly — when the supporting content is one continuous thought, use the slot; when it's a list of parallel sub-points, use `support[]`.)
+
+## Running it on a deck
+
+Start with your story in plain prose. One beat per paragraph or numbered item; the editorial work — what earns a slide, what gets cut, the sequence — is yours, before the agent sees anything.
+
+Then in this repo:
+
+1. Open Claude Code (or any fresh agent session) pointed at this directory.
+2. Ask it to map your beats per `ia-mapping.md`. Paste your beat list in the same turn.
+3. The agent rewrites [`slides.md`](./slides.md): one slide per beat, each with `beat:`, `read:`, `layout:`, and the primitive's props.
+4. Run `pnpm dev` to walk the deck. Reads are visible in the slide source — fix any wrong ones by editing the frontmatter inline.
+5. (Optional) Ask the agent to regenerate [`reads-summary.md`](./reads-summary.md) so you have a flat table of decisions to scan.
+
+The point isn't to ship the deck the agent generated. The point is to find out whether the *reading* feels right on real prose and whether ~7 primitives cover the rhetorical shapes your writing throws at the method. If a beat wants a primitive that isn't here, the agent records a `wanted: "<name>: <why>"` field rather than building it — coverage gaps become data.
