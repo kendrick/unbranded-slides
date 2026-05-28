@@ -5,4 +5,5 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
-slides-export.pdf
+*export.pdf
+*slides*.pdf
