@@ -1,11 +1,13 @@
 ---
 theme: default
 title: unbranded-slides — sample story
-layout: statement
+layout: claim-support
 beat: 1
-read: "one focal claim about brand-deck dissonance; the second sentence is a punchline restatement, not separate evidence → statement"
-text: "Most teams' decks look nothing like their product. Same company, two different brands."
+read: "two-beat: an observation about brand-deck dissonance followed by a one-line punchline that names the consequence → claim-support, with the punchline as slot-body prose beneath the assertion (single-item bullet would look weird)"
+heading: "Most teams' decks look nothing like their product."
 ---
+
+Same company, two different brands.
 
 ---
 layout: claim-support
