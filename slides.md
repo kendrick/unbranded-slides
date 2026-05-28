@@ -5,7 +5,7 @@ title: unbranded-slides
 
 # unbranded-slides
 
-POC scaffold boots.
+POC scaffold boots. Tokens come from `@unbranded-ds/tokens` via pnpm; Tailwind v4 utilities resolve to the same CSS vars.
 
 ---
 

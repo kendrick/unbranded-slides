@@ -7,3 +7,4 @@ dist
 components.d.ts
 *export.pdf
 *slides*.pdf
+style.compiled.css

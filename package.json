@@ -5,6 +5,11 @@
   "license": "MIT",
   "packageManager": "pnpm@10.28.2",
   "scripts": {
+    "tokens:build": "tailwindcss -i ./style.css -o ./style.compiled.css",
+    "tokens:watch": "tailwindcss -i ./style.css -o ./style.compiled.css --watch",
+    "predev": "pnpm tokens:build",
+    "prebuild": "pnpm tokens:build",
+    "preexport": "pnpm tokens:build",
     "dev": "slidev --open",
     "build": "slidev build",
     "export": "slidev export"
@@ -12,9 +17,12 @@
   "dependencies": {
     "@slidev/cli": "^52.15.2",
     "@slidev/theme-default": "latest",
+    "@unbranded-ds/tokens": "^0.3.0",
     "vue": "^3.5.33"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.60.0"
+    "@tailwindcss/cli": "^4.3.0",
+    "playwright-chromium": "^1.60.0",
+    "tailwindcss": "^4.3.0"
   }
 }

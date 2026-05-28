@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+@import '@unbranded-ds/tokens/preset.css';
+@import '@unbranded-ds/tokens/themes/light.css';
+
+@source "./slides.md";
+@source "./demo.md";
+@source "./layouts/**/*.vue";
+@source "./components/**/*.vue";
+
+/* Token-driven canvas. In @layer base so utility classes (in @layer utilities)
+   can override per CSS cascade layer precedence. */
+@layer base {
+  .slidev-layout {
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Remap Slidev's theme variables to @unbranded-ds/tokens. Slidev's UnoCSS preset
+   emits utilities like .bg-primary { background-color: var(--slidev-theme-primary) },
+   so overriding theme.colors.primary in unocss.config.ts doesn't reach them — but
+   overriding the underlying CSS variable does. */
+[data-theme="light"] {
+  --slidev-theme-primary: var(--color-primary);
+  --slidev-theme-background: var(--color-background);
+  --slidev-theme-foreground: var(--color-foreground);
+}
