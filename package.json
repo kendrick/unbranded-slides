@@ -8,9 +8,11 @@
     "tokens:build": "tailwindcss -i ./style.css -o ./style.compiled.css",
     "tokens:watch": "tailwindcss -i ./style.css -o ./style.compiled.css --watch",
     "predev": "pnpm tokens:build",
+    "predev:demo": "pnpm tokens:build",
     "prebuild": "pnpm tokens:build",
     "preexport": "pnpm tokens:build",
     "dev": "slidev --open",
+    "dev:demo": "slidev demo.md --open",
     "build": "slidev build",
     "export": "slidev export"
   },
